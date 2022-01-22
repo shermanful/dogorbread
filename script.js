@@ -1,27 +1,25 @@
-/*
-This is your site JavaScript code - you can add interactivity and carry out processing
-- Initially the JS writes a message to the console, and moves a button you can add from the README
-*/
+const image_input = document.querySelector('#image_input');
+const try_me = document.querySelector('#try_me');
+let uploaded_image;
 
-// Print a message in the browser's dev tools console each time the page loads
-// Use your menus or right-click / control-click and choose "Inspect" > "Console"
-console.log("Hello 🌎");
+//ml5.classification
 
-/* 
-Make the "Click me!" button move when the visitor clicks it:
-- First add the button to the page by following the "Next steps" in the README
-*/
-const btn = document.querySelector("button"); // Get the button from the page
-// Detect clicks on the button
-if (btn) {
-  btn.onclick = function() {
-    // The JS works in conjunction with the 'dipped' code in style.css
-    btn.classList.toggle("dipped");
-  };
-}
+image_input.addEventListener('change', function () {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => {
+    uploaded_image = reader.result;
+    document.querySelector(
+      '#display_image'
+    ).style.backgroundImage = `url(${uploaded_image})`;
+  });
 
-// This is a single line JS comment
-/*
-This is a comment that can span multiple lines 
-- use comments to make your own notes!
-*/
+  reader.readAsDataURL(this.files[0]);
+});
+
+try_me.addEventListener('click', function () {
+  if (uploaded_image) {
+    console.log('Try Me Clicked!');
+  } else {
+    console.log('Nothing to test!');
+  }
+});
