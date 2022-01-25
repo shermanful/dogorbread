@@ -13,6 +13,7 @@ Fixes needed:
   * rewording to account for non-bread/dog images
 
 Future versions may include 
+ * percentage bar to show how dog/bread are the model's results
  * an animation while the model is running
  * default image
  * in-app camera for mobile
