@@ -8,6 +8,10 @@ That’s it! Those are the only two options. Enjoy!
 
 
 ***
+Fixes needed: 
+  * no answer should appear with empty image - default image would solve
+  * rewording to account for non-bread/dog images
+
 Future versions may include 
  * an animation while the model is running
  * default image
